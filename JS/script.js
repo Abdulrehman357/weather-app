@@ -48,9 +48,10 @@ function getWeatherForecast(city) {
    fetch(apiUrl)
      .then(response => response.json())
      .then(data => {
-      const forecastData = data.list; // Array of forecast objects for 3-hour intervals
+
+      const forecastData = data.list; 
       const forecastCardsContainer = document.getElementById('forecast-cards');
-         // console.log(forecastData)
+    
       forecastCardsContainer.innerHTML = ''; 
   
 
@@ -58,7 +59,7 @@ function getWeatherForecast(city) {
       const filteredForecast = forecastData.filter((forecast, index) => index % 1 === 0);
 
       filteredForecast.forEach(forecast => {
-        const date = new Date(forecast.dt * 1000); // Convert timestamp to Date object
+        const date = new Date(forecast.dt * 1000); 
         const temperature = forecast.main.temp;
         const weatherDescription = forecast.weather[0].description;
         const weatherIcon = forecast.weather[0].icon;
@@ -66,18 +67,20 @@ function getWeatherForecast(city) {
         const forecastCard = document.createElement('div');
         forecastCard.classList.add('forecast-card');
 
-        const dateElement = document.createElement('h2');
-        dateElement.textContent = date.toLocaleDateString();
-        forecastCard.appendChild(dateElement);
+      //   const dateElement = document.createElement('h2');
+      //   dateElement.textContent = date.toLocaleDateString();
+      //   forecastCard.appendChild(dateElement);
 
         const timeElement = document.createElement('p');
         timeElement.textContent = date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
         forecastCard.appendChild(timeElement);
 
         const iconElement = document.createElement('img');
+        
         iconElement.src = `https://openweathermap.org/img/wn/${weatherIcon}.png`;
         iconElement.alt = weatherDescription;
         forecastCard.appendChild(iconElement);
+
 
         const temperatureElement = document.createElement('p');
         temperatureElement.textContent = `Temperature: ${temperature} °C`;
