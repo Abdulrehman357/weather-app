@@ -67,9 +67,9 @@ function getWeatherForecast(city) {
         const forecastCard = document.createElement('div');
         forecastCard.classList.add('forecast-card');
 
-      //   const dateElement = document.createElement('h2');
-      //   dateElement.textContent = date.toLocaleDateString();
-      //   forecastCard.appendChild(dateElement);
+        const dateElement = document.createElement('h2');
+        dateElement.textContent = date.toLocaleDateString();
+        forecastCard.appendChild(dateElement);
 
         const timeElement = document.createElement('p');
         timeElement.textContent = date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
