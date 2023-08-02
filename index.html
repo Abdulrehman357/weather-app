@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../CSS/style.css">
+    <link rel="icon" type="image/x-icon" href="../Assets/images/pngegg.png">
     <title>Weather</title>
 </head>
 <body>
@@ -27,39 +28,70 @@
             <div class="search-container">
                 <input type="text" class="search" placeholder="Search Location">
                 <input type="button" value="Search" class="btn-search">
-                <div class="weather-info">
-                    
-                    <img src="../Assets/images/rain.png" alt="Rain" class="weather-icon">
-                    <h4 class="description"></h4>
-                    <h2 class="temprature" >22°C</h2>
-                    <h3 class="city"></h3>
-                    <div class="details">
-                        <div class="col">
-                            <img src="../Assets/images/humidity.png" alt="humidity" >
-                            <div>
-                                <p class="humidity">50%</p>
-                                <p>Humidity</p>
-                            </div>
-                            
-                        </div>
-                        <div class="col">
-                            <img src="../Assets/images/wind.png" alt="wind" >
-                            <div>
-                                <p class="wind">50Mph</p>
-                                <p>Wind Speed</p>
-                            </div>
-                        </div>
-                    </div>
-        
-                </div>
             </div>
+            <h4 class="alert"></h4>
         </div>
         
     </div>
-    <div class="forecast-cards" id="forecast-cards">
-        
-      </div>
 
+
+
+<div class="weather-container">
+
+
+    <div class="weather-info">
+              
+        <img src="../Assets/images/pngegg.png" alt="Rain" class="weather-icon">
+        <h4 class="description">Search a city Name</h4>
+        <h2 class="temprature" ></h2>
+       
+        <h3 class="city"></h3>
+        <div class="details">
+            <div class="col">
+                <img src="../Assets/images/humidity.png" alt="humidity" >
+                <div>
+                    <p class="humidity"></p>
+                    <p></p>
+                </div>
+                
+            </div>
+            <div class="col">
+                <img src="../Assets/images/wind.png" alt="wind" >
+                <div>
+                    <p class="wind"></p>
+                    <p></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="current-details-cont">
+        <h2>Weather Details</h2>
+<div class="current-details">
+
+    <!-- <img src="../Assets/images/undraw_weather_app_re_kcb1.svg" alt="" srcset=""> -->
+    <p class="feels-like" ></p>
+    <p class="pressure" ></p>
+    <div class="divider"></div>
+    <div class="divider"></div>
+    <p class="visibilty" ></p>
+    
+    <p class="cloud-cover" ></p>
+    <div class="divider"></div>
+    <div class="divider"></div>
+    <p id="sunrise" ></p>
+    <p class="sunset" ></p>
+    <div class="divider"></div>
+    <div class="divider"></div>
+    
+</div>
+</div>      
+    
+</div>
+
+<div class="forecast-cards" id="forecast-cards">
+    
+  </div>
     <!-- weather-info -->
 
 
