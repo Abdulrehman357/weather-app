@@ -219,3 +219,20 @@ h1{
   width: 80%;
   border: 1px solid white;
 }
+
+
+/* responsive design for mobile view */
+
+@media screen and (max-width:900px) {
+
+  .weather-container{
+    flex-direction: column;
+  }
+.weather-info{
+  width: 80%;
+}
+ .current-details-cont{
+  width: 80%;
+ }
+  
+}
