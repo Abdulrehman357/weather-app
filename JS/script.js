@@ -16,8 +16,30 @@ async function getWeather(city){
     document.querySelector(".humidity").innerHTML = Math.round(data.main.humidity) + "%"
     document.querySelector(".wind").innerHTML = Math.round(data.wind.speed)+"km/h"
     document.querySelector(".description").innerHTML = data.weather[0].description
-
- if(data.weather[0].main == "Clear"){
+    document.querySelector(".feels-like").innerHTML = "RealFeel     "+Math.round(data.main.feels_like) + "°"
+    document.querySelector(".pressure").innerHTML = "Pressure:  "+Math.round(data.main.pressure) + "Br"
+    document.querySelector(".visibilty").innerHTML = "Visibilty:  "+data.visibility/1000 + "Km"
+    console.log(data.sys.sunrise)
+// convert unix time stamp to hours and minutes for sunrise
+   const unixTimestamp = data.sys.sunrise;
+   const sunrise = unixTimestamp *1000;
+   const date = new Date(sunrise)
+   const amOrPm = date.getHours() >= 12 ? 'PM' : 'AM';
+    document.querySelector("#sunrise").innerHTML = "Sunrise:  "+ date.getHours() +":"+date.getMinutes() + "  "+amOrPm
+    document.querySelector(".cloud-cover").innerHTML = "Cloud Cover:  "+data.clouds.all + "%"
+   
+ 
+ // convert unix time stamp to hours and minutes for sunset
+ const unixTimestamp1 = data.sys.sunset;
+ const sunset = unixTimestamp1 *1000;
+ const dates = new Date(sunset)
+ const amOrPms = date.getHours() >= 12 ? 'PM' : 'AM';
+ 
+ document.querySelector(".sunset").innerHTML = "Sunset:  "+ dates.getHours() +":"+dates.getMinutes() + "  "+amOrPm
+ 
+ 
+ 
+    if(data.weather[0].main == "Clear"){
     weatherIcon.src = "../Assets/images/clear.png"
  }
  else if(data.weather[0].main == "Clouds"){
@@ -68,7 +90,7 @@ function getWeatherForecast(city) {
         forecastCard.classList.add('forecast-card');
 
         const dateElement = document.createElement('h2');
-        dateElement.textContent = date.toLocaleDateString();
+        dateElement.textContent = date.toLocaleString('en-us', {weekday: 'long'});
         forecastCard.appendChild(dateElement);
 
         const timeElement = document.createElement('p');
@@ -83,7 +105,7 @@ function getWeatherForecast(city) {
 
 
         const temperatureElement = document.createElement('p');
-        temperatureElement.textContent = `Temperature: ${temperature} °C`;
+        temperatureElement.textContent = `${temperature} °C`;
         forecastCard.appendChild(temperatureElement);
 
         const descriptionElement = document.createElement('p');
@@ -91,12 +113,15 @@ function getWeatherForecast(city) {
         forecastCard.appendChild(descriptionElement);
 
         forecastCardsContainer.appendChild(forecastCard);
+        document.querySelector(".alert").innerHTML =""
       });
        console.log(data);
       
      })
      .catch(error => {
        console.error('Error fetching forecast data:', error);
+      
+       document.querySelector(".alert").innerHTML = "Invalid City Name"
      });
  }
 
@@ -104,3 +129,4 @@ btnsearch.addEventListener("click", ()=>{
     getWeather(search.value)
     getWeatherForecast(search.value)
 })
+
