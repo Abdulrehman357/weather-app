@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Webpage</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Navbar styles */
+        nav {
+            display: flex;
+            background-color: #fff;
+            color: 333;
+            padding: 2rem;
+            width: 100%;
+            align-items: center ;
+            justify-content: space-between;
+        }
+
+        /* Header styles */
+        header {
+            background-color: #007bff;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            width: 100%;
+        }
+
+        /* Main content and newsletter styles */
+        .content-container {
+            display: flex;
+            width: 100%;
+        }
+        a{
+            text-decoration: none;
+            padding: 1.3rem 0.8rem;
+            border: 1px solid black;
+            border-radius: 2rem;
+        }
+
+        .main-content {
+            width: 70%;
+            padding: 20px;
+        }
+
+        .newsletter {
+            width: 30%;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav>
+            <div>
+                <a href="#">Company Name</a>
+            </div>
+            <div>
+
+                <a href="#">Home</a>
+                <a href="#">About</a>
+                <a href="#">Services</a>
+                <a href="#">Contact</a>
+            </div>
+       
+    </nav>
+
+    <!-- Header -->
+    <header>
+        <h1>Welcome to Our Website</h1>
+    </header>
+
+    <!-- Main Content and Newsletter -->
+    <div class="content-container">
+        <!-- Main Content -->
+        <div class="main-content">
+            <h2>Main Content</h2>
+            <p>This is the main content of the webpage. It takes up 70% of the width.</p>
+        </div>
+
+        <!-- Newsletter -->
+        <div class="newsletter">
+            <h2>Newsletter</h2>
+            <p>Subscribe to our newsletter for the latest updates.</p>
+            <form>
+                <input type="email" placeholder="Enter your email">
+                <button type="submit">Subscribe</button>
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>
